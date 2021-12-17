@@ -47,7 +47,7 @@ def main():
 
     for asset in assets:
         asset_pair = f'{asset}USDT'
-        data_filename = f'data/{asset_pair}.csv'
+        data_filename = f'data.nosync/{asset_pair}.csv'
 
         if exists(data_filename):
             temp_df = pd.read_csv(data_filename)
