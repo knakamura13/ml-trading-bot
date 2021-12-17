@@ -89,7 +89,7 @@ def main():
     for i in tqdm(range(len(df))):
         df['time'][i] = datetime.fromtimestamp(int(df['time'][i] / 1000))
 
-    df.to_csv('12-coins-Mar18_Jun20.csv', index=False)
+    df.to_csv('12-coins-Mar18_Jun20.csv.nosync', index=False)
 
 
 if __name__ == '__main__':
