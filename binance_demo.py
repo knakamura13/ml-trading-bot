@@ -30,13 +30,15 @@ def compute_sma(_data, window):
 ################
 
 def main():
-    SMA_LOW = 40
-    SMA_HIGH = 150
+    SMA_LOW = 15
+    SMA_HIGH = 50
 
     # select cryptocurrencies you'd like to gather and set the backtesting time interval
     assets = ['BTC', 'ETH', 'LTC', 'XLM', 'XRP', 'XMR', 'TRX', 'LINK', 'IOTA', 'EOS', 'DASH', 'ZRX']
-    START_TIME = '28 Mar, 2019'
-    END_TIME = '1 Jun, 2020'
+    START_TIME_TESTING = '1 Dec, 2021'
+    START_TIME = '1 Jan, 2015'
+    START_TIME = START_TIME_TESTING  # For quick debugging purposes
+    END_TIME = '26 Dec, 2021'
     api_key = ''
     api_secret = ''
     client = Client(api_key=api_key, api_secret=api_secret)
@@ -89,7 +91,7 @@ def main():
     for i in tqdm(range(len(df))):
         df['time'][i] = datetime.fromtimestamp(int(df['time'][i] / 1000))
 
-    df.to_csv('12-coins-Mar18_Jun20.csv.nosync', index=False)
+    df.to_csv(f'{len(assets)}-coins-{START_TIME[-4:]}.csv.nosync', index=False)
 
 
 if __name__ == '__main__':
