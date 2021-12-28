@@ -91,7 +91,8 @@ def main():
     for i in tqdm(range(len(df))):
         df['time'][i] = datetime.fromtimestamp(int(df['time'][i] / 1000))
 
-    df.to_csv(f'{len(assets)}-coins-{START_TIME[-4:]}.csv.nosync', index=False)
+    save_file = f'{len(assets)}-coins-{START_TIME.split(" ")[1].replace(",", "")}-{START_TIME[-4:]}-{END_TIME.split(" ")[1].replace(",", "")}-{END_TIME[-4:]}.csv.nosync'
+    df.to_csv(save_file.lower(), index=False)
 
 
 if __name__ == '__main__':
