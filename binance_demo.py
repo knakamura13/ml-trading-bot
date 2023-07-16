@@ -35,9 +35,8 @@ def main():
 
     # select cryptocurrencies you'd like to gather and set the backtesting time interval
     assets = ['BTC', 'ETH', 'LTC', 'XLM', 'XRP', 'XMR', 'TRX', 'LINK', 'IOTA', 'EOS', 'DASH', 'ZRX']
-    START_TIME_TESTING = '1 Dec, 2021'
-    START_TIME = '1 Jan, 2015'
-    START_TIME = START_TIME_TESTING  # For quick debugging purposes
+    START_TIME = '1 Jan, 2020'
+    START_TIME = '1 Jan, 2015'  # Override original value for quick debugging purposes
     END_TIME = '26 Dec, 2021'
     api_key = ''
     api_secret = ''
